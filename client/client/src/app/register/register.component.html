@@ -1,6 +1,6 @@
 <form [formGroup]="fromsdata" (ngSubmit)="registerUser(register)" #register="ngForm">
-  <input type="text" placeholder="Enter Your name" formControlName="username">
-  <input type="email" placeholder="Enter Your email" formControlName="email">
+  <input type="text" placeholder="Enter Your name" formControlName="username"><br><br>
+  <input type="email" placeholder="Enter Your email" formControlName="email"><br><br>
   <input type="text" placeholder="Enter Your password" formControlName="password"><br><br>
   <button mat-raised-button color="primary" type="submit" >Submit</button>
 </form>

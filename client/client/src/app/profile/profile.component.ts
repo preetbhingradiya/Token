@@ -17,6 +17,8 @@ export class ProfileComponent implements OnInit {
   message: string = ''
   success: string = ''
 
+  // image:string=''
+
   dataShow:boolean=false
 
   data:any
