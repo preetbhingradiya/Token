@@ -1,15 +1,17 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { Component, inject } from '@angular/core';
+import { Component, Input, Output, inject } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserService } from '../service/user.service';
 import { Router, RouterLink } from '@angular/router';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule,ReactiveFormsModule,FormsModule,HttpClientModule,RouterLink],
+  imports: [CommonModule,ReactiveFormsModule,FormsModule,HttpClientModule,RouterLink,MatButtonModule,MatIconModule],
   templateUrl: './login.component.html',
   providers:[UserService]
 })
@@ -41,4 +43,6 @@ export class LoginComponent {
         }
     })
   }
+
+
 }

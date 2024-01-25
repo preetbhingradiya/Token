@@ -6,11 +6,13 @@ import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserService } from '../service/user.service';
 import Swal from 'sweetalert2';
 import { Router, RouterLink } from '@angular/router';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 
-@Component({
+ @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [CommonModule,ReactiveFormsModule,FormsModule,HttpClientModule,RouterLink],
+  imports: [CommonModule,ReactiveFormsModule,FormsModule,HttpClientModule,RouterLink,MatButtonModule,MatIconModule],
   templateUrl: './register.component.html',
   providers:[UserService]
 })

@@ -1,1 +1,18 @@
+
+  <button mat-button color="primary" *ngIf="!authentication" >
+    <a [routerLink]="['/register']" routerLinkActive="router-link-active">Register</a>
+  </button>
+
+  <button mat-button color="primary" *ngIf="!authentication">
+    <a [routerLink]="['/login']" routerLinkActive="router-link-active">Log-In</a>
+  </button>
+
+<button mat-button color="primary">
+  <a [routerLink]="['/profile']" routerLinkActive="router-link-active" >Profile</a>
+</button>
+
+<button mat-raised-button color="warn" style="margin-left: 12px;" (click)="logOutUser()"*ngIf="authentication" >Log-Out</button>
+
+<h3>{{message}}</h3>
+
 <router-outlet></router-outlet>

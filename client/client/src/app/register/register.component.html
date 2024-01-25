@@ -1,11 +1,10 @@
 <form [formGroup]="fromsdata" (ngSubmit)="registerUser(register)" #register="ngForm">
   <input type="text" placeholder="Enter Your name" formControlName="username">
   <input type="email" placeholder="Enter Your email" formControlName="email">
-  <input type="text" placeholder="Enter Your password" formControlName="password">
-  <button type="submit">Submit</button>
+  <input type="text" placeholder="Enter Your password" formControlName="password"><br><br>
+  <button mat-raised-button color="primary" type="submit" >Submit</button>
 </form>
 <h3>{{message}}</h3>
-<a routerLink="/login">Log-In</a>
 
 <!--
 <form  (ngSubmit)="registerUser(register)" #register="ngForm">

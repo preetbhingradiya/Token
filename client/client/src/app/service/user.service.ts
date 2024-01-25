@@ -17,7 +17,12 @@ export class UserService {
     return this.http.post('http://localhost:8000/api/login',data,{withCredentials:true})
   }
 
+  logoutUser(){
+    return this.http.get("http://localhost:8000/api/logout",{withCredentials:true})
+  }
+
   profileUser(){
     return this.http.get('http://localhost:8000/api/profile',{withCredentials:true})
   }
+
 }
