@@ -32,13 +32,15 @@ export class RegisterComponent {
 
   registerUser(data:any){
     this.userService.postUserData(data.value).subscribe(res=>{
+      console.log(res);
        Swal.fire(`welcome ${res.username} to the website`)
-      this.route.navigate(['login'])
+       this.route.navigate(['login'])
     },err=>{
       this.message=err.error.message
       setTimeout(()=>{
         this.route.navigate(['login'])
       },1500)
     })
+
   }
 }

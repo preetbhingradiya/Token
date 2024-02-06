@@ -19,7 +19,7 @@ const user = express();
 
 user.post("/register", async (req, res) => {
   try {
-    let { username, email, password,img } = req.body;
+    let { username, email, password } = req.body;
 
     let confirmUser = await User.findOne({ email: email });
 
@@ -33,7 +33,6 @@ user.post("/register", async (req, res) => {
       let user = await User.create({
         username: username,
         email: email,
-        img:img,
         password: hashPassword,
       });
       res.send(user);
@@ -41,7 +40,7 @@ user.post("/register", async (req, res) => {
   } catch (error) {
     res.send(error.message);
   }
-});
+})
 
 user.post("/login", async (req, res) => {
   let { email, password } = req.body;
@@ -104,9 +103,13 @@ user.get("/logout", (req, res) => {
   }
 });
 
-user.post('/upload', upload.single('img'),  (req, res)=> {
+user.post('/upload', upload.single('img'), async (req, res)=> {
+  if (!req.file) {
+    return res.status(400).json({ message: 'No file uploaded' });
+  }
 
-  res.send(req.file)
+  const imagePath = req.file.path;
+  res.json({ imagePath });
 })
 
 
